@@ -1,0 +1,77 @@
+body{
+  background-color: #272b30!important;
+  text-shadow: 1px 1px 1px rgb(0 0 0 / 30%);
+  color: #fff;
+  font-family: 'Montserrat' , sans-serif;
+}
+a,a:hover{
+  color: #fff;
+  text-decoration: none;
+}
+.navbar{
+  background-color: #272b30!important;
+  border-bottom: 1px solid rgba(28,28,28,.6);
+  text-shadow: 1px 1px 1px rgb(0 0 0 / 30%);
+
+}
+.navbar .logout{
+  color: #4799eb;
+    border-color: #4799eb;
+}
+.navbar-brand img{width: 70px;}
+.game:hover{
+  transform: scale(1.1);
+  transition: transform .9s; 
+}
+.games-header{
+  background: url(http://routeegypt.com/GameOver/paladins.b44d33d6e7ee1ba8.png);
+    background-repeat: no-repeat;
+    background-color: #1c1e22;
+    background-position: top;
+    background-size: contain;
+    border-radius: 0.3rem;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(0,0,0,.6);
+    padding: 4rem 2rem;
+}
+.games-header .play{
+  color: #49acff!important;
+
+}
+
+.game-body .recommandation,.recommandation{color: #aaa;}
+.game-body{background-color: #272b30!important;}
+.game-body .game {
+  display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #32383e;
+    background-clip: border-box;
+    border: none;
+
+}
+.game-body .free{
+  background-color: #4799eb;
+  border-radius: 22%;
+  font-size: 12px;
+}
+.register-text{    background-color: #32383e}
+.register-text input,.register-text input:hover{ background-color: #1c1e22 !important;
+  border: 0 solid rgba(0,0,0,.6);
+  border-radius: 5px;}
+  .register .registerimg img{ width: 612px;height: 100%;}
+  .register .btn{background-color: #3a3f44;
+    border-color: #22241d;}
+  .register .login-btn{    color: #4799eb;
+      text-decoration: none;
+      background-color: transparent;}
+  .register .register-image{    background: url('https://routeegypt.com/GameOver/gaming.ebaf2ffc84f4451d.jpg');
+      background-position: cover;
+        background-size: 100% 100%;
+    }
+  .login-img{    width: 25%;  }
+  .login-btn2{width: 95%;
+    background-color: #3a3f44;
+    border-color: #22241d;}
+  
