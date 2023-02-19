@@ -5,37 +5,20 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 export default function Home() {
-  let [gamesList, setGamesList] = useState([]);
-  let [allList, setAllList] = useState([]);
-  let [platformsList, setPlatformsList] = useState([]);
-  let [sortbyList, setSortbyList] = useState([]);
-  let [categoriesList, setCategoriesList] = useState([]);
+  const [items, setItems] = useState(null);
 
   useEffect(() => {
-    getData("games", setGamesList);
-    getData("all", setAllList);
-    getData("platform", setPlatformsList);
-    getData("sortby", setSortbyList);
-    getData("categories", setCategoriesList);
+    const dataItem = async () => {
+      const res = await axios.get(
+        "https://www.freetogame.com/api/filter?tag=3d.mmorpg.fantasy.pvp"
+      );
+      const data = await res.data;
+      console.log(data);
+      setItems(data);
+    };
+    dataItem();
   }, []);
 
-  async function getData() {
-    let { data } = await axios.get(
-      `https://www.freetogame.com/api/filter?tag=3d.mmorpg.fantasy.pvp&home`
-    );
-    console.log(data);
-  }
-
-  // useEffect(() => {
-  //   const dataItem = async () => {
-  //     const res = await axios.get(
-  //       "https://www.freetogame.com/api/filter?tag=3d.mmorpg.fantasy.pvp"
-  //     );
-  //     const data = await res.data;
-  //     console.log(data);
-  //   };
-  //   dataItem();
-  // }, []);
   return (
     <>
       <section className="games-header text-center">
@@ -61,18 +44,18 @@ export default function Home() {
         <h3 className="recommandation m-5">
           <i className="fas fa-robot px-2"></i>Personalized Recommendations
         </h3>
-        {gamesList.map((games, i) => (
-          <div key={i} className="col-md-4">
-            <div className="item">
-              <img
-                src={"https://www.freetogame.com/g/540" + games.thumbnail}
-                className="w-100"
-                alt=""
-              />
-              <h3>{games.title}</h3>
-            </div>
-          </div>
-        ))}
+        {items
+          ? items.map((item) => {
+              return (
+                <div key={item.id} className="col-md-4">
+                  <div className="item">
+                    <img src={item.thumbnail} className="w-100" alt="" />
+                    <h3>{item.title}</h3>
+                  </div>
+                </div>
+              );
+            })
+          : null}
       </div>
     </>
   );
